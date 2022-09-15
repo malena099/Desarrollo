@@ -98,13 +98,10 @@ function loadSelect3() {
 
 function mostrarImagen() {
 
-    if (null == getUrlImagenForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value)) {
-        imagen.style.display = "none";
-        return false;
-    }
-    imagen.style.display = "block";
+    if ("Elige un coche" !== marcasSelect.value && "Elige el modelo" !== modelsSelect.value) {
     imagen.src = getUrlImagenForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     $(document).ready(function(){
-      $("#botonConfirmacion").fadeIn("3000");
-  });
-  }
+        $("#botonConfirmacion").fadeIn(1000);
+        });
+    }
+}

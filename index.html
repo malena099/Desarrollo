@@ -47,16 +47,12 @@
   //Detectamos si el usuario denegó el mensaje
   else {
   alert("Por favor, vuelva a introducir el modelo.");
-  document.getElementById('selectores').reset();
-  document.getElementById('imagen').style.display = 'none';
-  document.getElementById('botonConfirmacion').style.display="none";
+  location.reload()
   }
   }
   function Negacionbutton(){
     alert("Vuelva a introducir el modelo.");
-    document.getElementById('selectores').reset();
-    document.getElementById('imagen').style.display = 'none';
-    document.getElementById('botonConfirmacion').style.display="none";
+    location.reload()
   }
   </script>
 
