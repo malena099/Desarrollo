@@ -1,14 +1,74 @@
+.selectores select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.selectores select::-ms-expand {
+    display: none;
+}
+
+.selectores{
+	max-width: 650px;
+	position: relative;
+    justify-content: space-around;
+}
+ 
+.selectores select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: rgb(0, 0, 0);
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+ 
+.selectores select:hover{
+	background: #99e4be56;
+}
+ 
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.selectores i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 16px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #2AC176;
+	border-bottom:4px solid #2AC176;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+ 
+.selectores:hover i{
+	margin-top: 3px;
+}
+
+
 #selectores {
-    font-size: 17px;
-    height: 100px;
-    width: 800px;
+    height: 3000px;
+    width: 6000px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #ffffffa2;
-    justify-content: space-around;
-    border-style: inset; border-width: 4px;
+    justify-items: center;
     }
     #cuerpo {
     height: 700px;
@@ -34,10 +94,31 @@
     width: 400px;
     margin: 0 auto;
     display: grid;
+    font-family: 
+	'Quicksand', sans-serif;
     justify-content: center;
     align-items: center;
     background-color: #ffffffa2;
     justify-content: space-around;
     border-style: inset; border-width: 4px;
-
+    }
+    .botonConfirmacion button{
+    display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: rgb(0, 0, 0);
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
     }
