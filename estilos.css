@@ -92,8 +92,11 @@
     justify-content: space-around;
     border-style: inset; border-width: 4px;
     }
+    
+.botonConfirmacion button::-ms-expand {
+    display: none;
+}
     .botonConfirmacion button{
-    display: inline-block;
 	width: 100%;
 	cursor: pointer;
   	padding: 7px 10px;
@@ -112,7 +115,9 @@
     position: relative;
     transition: all 0.25s ease;
     }
-
+.botonConfirmacion button:hover{
+        background: #b8eac389;
+    }
     #logo2 {
     font-size: 17px;
     top: 750px;
@@ -123,6 +128,4 @@
 	'Quicksand', sans-serif;
     background-color: #ffffff;
     }
-    .botonConfirmacion button:hover{
-        background: #b8eac389;
-    }
+    
