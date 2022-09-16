@@ -36,7 +36,7 @@
 }
  
 .selectores select:hover{
-	background: #99e4be56;
+	background: #d1e2d967;
 }
  
 /* 
@@ -63,8 +63,8 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
 
 
 #selectores {
-    height: 3000px;
-    width: 6000px;
+    height: 300px;
+    width: 600px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -121,4 +121,15 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
     border-radius: 12px;
     position: relative;
     transition: all 0.25s ease;
+    }
+
+    #logo2 {
+    font-size: 17px;
+    top: 750px;
+    position: absolute;
+    height: 150px;
+    width: 1670px;
+    font-family: 
+	'Quicksand', sans-serif;
+    background-color: #ffffff;
     }

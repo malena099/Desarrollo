@@ -5,7 +5,12 @@
   <link href="estilos.css" rel="stylesheet" type="text/css"> <!--incluimos el archivo css (nos da formato a la página)-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body style="background-color:rgba(208, 235, 208, 0.234);">
+<body style="background-color:rgba(0, 0, 0, 0.47);">
+<div id="logo2" class="logo2">
+    <img src="logo.png" width="13%" style="top: 30px;
+    right: 1350px;
+    position: absolute;" />
+</div>
 <div id="Contenedor"> <!-- En las siguientes líneas creamos los selects para la elección del vehículo-->
 <form id="selectores" class="selectores">    
     <select id="marcas" style="font-size: 15px;">
@@ -27,11 +32,7 @@
       <button onclick="ConfirmDemo()" >S&iacute;</button>
       <button onclick="Negacionbutton()">No</button>
     </div>
-    <div class="logo">
-      <img src="logo.png" style="top: 750px;
-      right: 1350px;
-      position: absolute;" name="imagen" id="imagen" width="15%" alt=""/>
-    </div>
+
 <script src="my.js"></script><!-- En este archivo estan los datos de los coches-->
 
 <!--Con las siguientes funciones configuramos los botones de confirmacion o negacion del coche-->
