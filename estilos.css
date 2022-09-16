@@ -39,11 +39,6 @@
 	background: #d1e2d967;
 }
  
-/* 
-Creamos la fecha que aparece a la izquierda del select.
-Realmente este elemento es un cuadrado que sólo tienen
-dos bordes con color y que giramos con transform: rotate(-45deg);
-*/
 .selectores i{
 	position: absolute;
 	right: 20px;
