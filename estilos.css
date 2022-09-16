@@ -4,7 +4,7 @@
 }
 
 .selectores{
-	max-width: 650px;
+	max-width: 690px;
 	position: relative;
     justify-content: space-around;
 }
@@ -54,7 +54,7 @@
 
 #selectores {
     height: 300px;
-    width: 600px;
+    width: 690px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
