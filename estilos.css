@@ -31,7 +31,7 @@
 }
  
 .selectores select:hover{
-	background: #d1e2d967;
+	background: #b8eac389;
 }
  
 .selectores i{
@@ -41,8 +41,8 @@
 	width: 16px;
 	height: 16px;
 	display: block;
-	border-left:4px solid #2AC176;
-	border-bottom:4px solid #2AC176;
+	border-left:4px solid #d3fd16;
+	border-bottom:4px solid #e6ff03;
 	transform: rotate(-45deg); /* Giramos el cuadrado */
 	transition: all 0.25s ease;
 }
@@ -122,4 +122,7 @@
     font-family: 
 	'Quicksand', sans-serif;
     background-color: #ffffff;
+    }
+    .botonConfirmacion button:hover{
+        background: #b8eac389;
     }
