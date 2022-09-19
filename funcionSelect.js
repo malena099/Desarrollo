@@ -14,6 +14,7 @@ var marcasSelect = document.getElementById('marcas');
 var modelsSelect = document.getElementById('models');
 var fechaSelect = document.getElementById('fecha');
 var imagen = document.getElementById('imagen');
+var cell = document.getElementById('cell');
 marcasSelect.addEventListener("change", loadSelect2);
 marcasSelect.addEventListener("change", loadSelect3);
 modelsSelect.addEventListener("change", loadSelect3);
@@ -37,4 +38,12 @@ function mostrarImagen() {
         $("#botonConfirmacion").fadeIn(1000);
         });
     }
+}
+
+//Con esto mostramos la imagen de la celda junto con el texto
+function SelectCelda(){
+    
+    if ("Elige un coche" !== marcasSelect.value && "Elige el modelo" !== modelsSelect.value) {
+        cell.src = getUrlCeldasForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+        }
 }
