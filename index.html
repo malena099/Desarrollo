@@ -7,10 +7,16 @@
 </head>
 <body style="background-color:rgba(0, 0, 0, 0.47);">
 
-  <div id="Contenedor2">
+<div id="Contenedor2">
     <div align="center"><img style="text-align: center; top: 200px;
       right: 750px;
       position: absolute;" name="cell" id="cell" width="30%" alt=""/></div>
+
+        <div id="infoCelda" style="display: none">
+          <div id="v"></div>
+          <div id="t"></div>
+          <div id="mo"></div>
+        </div>
 </div>
 
 <div id="logo2" class="logo2">
@@ -55,21 +61,47 @@
   function ConfirmDemo() {
   //Ingresamos un mensaje a mostrar
   var mensaje = confirm( " \u00BFEs este su coche?");
+  
   //Detectamos si el usuario acepto el mensaje
+  
   if (mensaje) {
-  alert("Has confirmado la elecci\u00F3n.");
+  
+    alert("Has confirmado la elecci\u00F3n.");
+
+ // Con el siguiente código enseñamos los datos de la celda
+    
+    document.getElementById("Contenedor1").style.display="none";
+    document.getElementById("infoCelda").style.display="block";
+
+    var cell=SelectCelda();
+
+    var volt= "Voltaje: "+ getvoltajeForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    document.getElementById("v").innerHTML=volt;
+
+    var Tech= "Tecnología: "+ getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    document.getElementById("t").innerHTML=Tech;
+
+    var mol= "Modulo: "+ getModuloForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    document.getElementById("mo").innerHTML=mol;
+    console.log( getModuloForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value));
   }
   //Detectamos si el usuario denegó el mensaje
+  
   else {
-  alert("Por favor, vuelva a introducir el modelo.");
-  location.reload()
+  
+    alert("Por favor, vuelva a introducir el modelo.");
+    location.reload()
+
   }
+
   }
+
   function Negacionbutton(){
     alert("Vuelva a introducir el modelo.");
     location.reload()
-  }
-  </script>
 
+  }
+
+</script>
 </body>
 </html>

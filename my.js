@@ -20,7 +20,7 @@ init();
 
 let coches, marcas;
    
-const url = "https://script.google.com/macros/s/AKfycbyqIVnwV7clO3BphXRiZKC_xx9rusJv3GpGVC4AvAOB_aMsURvC89WbBFxS8xnOdTB0/exec";
+const url = "https://script.google.com/macros/s/AKfycbwuC0LtzYyBxDOKquVNeUj-oUEdvYbUxxjEWVI06Y9LaMQCEFchl7wZp-ptV0yFu2Qh/exec";
 
 
 fetch(url)
@@ -54,9 +54,6 @@ function loadCars(data) {
     loadSelect2();
     loadSelect3();
     mostrarImagen();
-    mostrarImagen("Toyota","Prius","1997-2003");
-    SelectCelda();
-    SelectCelda("Toyota","Prius","1997-2003");
 }
 //colocamos los datos en un archivo json con su formato
 function getModelosForMarca(marca) {
@@ -137,7 +134,7 @@ function getModuloForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     
     for (let coche of coches) {
         if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
-            imagenes.push(coche["modulo"])
+            modulos.push(coche["modulo"])
         }
     }
     
