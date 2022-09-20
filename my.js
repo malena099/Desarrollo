@@ -20,7 +20,7 @@ init();
 
 let coches, marcas;
    
-const url = "https://script.google.com/macros/s/AKfycbwuC0LtzYyBxDOKquVNeUj-oUEdvYbUxxjEWVI06Y9LaMQCEFchl7wZp-ptV0yFu2Qh/exec";
+const url = "https://script.google.com/macros/s/AKfycby9I2uk16F0g7XsJOlcxkC4xNoRSuNC6UKGoawn9AnDLmTAGdTCYy4dtghSPQiOqY-K/exec";
 
 
 fetch(url)
@@ -43,8 +43,11 @@ function loadCars(data) {
                 "urlImagen": data[row][3],
                 "urlCeldas": data[row][4],
                 "voltaje":data[row][5],
-                "tecnologia":data[row][6],
-                "modulo":data[row][7]
+                "NumCell":data[row][6],
+                "tecnologia":data[row][7],
+                "modulo":data[row][8],
+                "MinVolt":data[row][9],
+                "MaxVolt":data[row][10]
             }
         )
         
@@ -117,6 +120,18 @@ function getvoltajeForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     return voltajenom;
 }
 
+function getNumCellForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let ncell = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            ncell.push(coche["NumCell"])
+        }
+    }
+    
+    return ncell;
+}
+
 function getTecnologiaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     let tec = []
     
@@ -139,4 +154,28 @@ function getModuloForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     }
     
     return modulos;
+}
+
+function getMinVoltForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let mvolt = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            mvolt.push(coche["MinVolt"])
+        }
+    }
+    
+    return mvolt;
+}
+
+function getMaxVoltForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let mxvolt = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            mxvolt.push(coche["MaxVolt"])
+        }
+    }
+    
+    return mxvolt;
 }

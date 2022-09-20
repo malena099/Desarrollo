@@ -13,9 +13,16 @@
       position: absolute;" name="cell" id="cell" width="30%" alt=""/></div>
 
         <div id="infoCelda" style="display: none">
+          <p>
+          <b><u>Características de la celda</u></b>
+          </p>
+
           <div id="v"></div>
+          <div id="nc"></div>
           <div id="t"></div>
           <div id="mo"></div>
+          <div id="mv"></div>
+          <div id="mxv"></div>
         </div>
 </div>
 
@@ -78,12 +85,20 @@
     var volt= "Voltaje: "+ getvoltajeForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     document.getElementById("v").innerHTML=volt;
 
+    var ncell= "Número de celdas: "+ getNumCellForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    document.getElementById("nc").innerHTML=ncell;
+    
     var Tech= "Tecnología: "+ getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     document.getElementById("t").innerHTML=Tech;
 
     var mol= "Modulo: "+ getModuloForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     document.getElementById("mo").innerHTML=mol;
-    console.log( getModuloForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value));
+
+    var mvo= "Voltaje Mínimo: "+ getMinVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    document.getElementById("mv").innerHTML=mvo;
+
+    var mav= "Voltaje Máximo: "+ getMaxVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    document.getElementById("mxv").innerHTML=mav;
   }
   //Detectamos si el usuario denegó el mensaje
   
