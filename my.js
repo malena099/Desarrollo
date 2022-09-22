@@ -50,13 +50,12 @@ function loadCars(data) {
                 "MaxVolt":data[row][10]
             }
         )
-        
+        marcas.add("Elige coche");
         marcas.add(data[row][0])
     }
     loadSelect("marcas", marcas);
-    loadSelect2();
-    loadSelect3();
-    mostrarImagen();
+    marcasSelect.addEventListener("change", loadSelect2);
+    modelsSelect.addEventListener("change", loadSelect3);
 }
 //colocamos los datos en un archivo json con su formato
 function getModelosForMarca(marca) {
@@ -64,6 +63,7 @@ function getModelosForMarca(marca) {
     let models = new Set()
     
     for (let coche of coches) {
+        models.add("Elige Modelo");
         if (coche["marca"] === marca) {
             models.add(coche["modelo"])
         }
@@ -73,11 +73,13 @@ function getModelosForMarca(marca) {
 }
 
 function getFechasForMarcaAndModelo(marca, modelo) {
-    let fechas = []
-    
+
+    let fechas = new Set()
+            
     for (let coche of coches) {
+        fechas.add("Elige Fecha");
         if (coche["marca"] === marca && coche["modelo"] === modelo) {
-            fechas.push(coche["fechas"])
+            fechas.add(coche["fechas"])
         }
     }
     

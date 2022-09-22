@@ -8,22 +8,23 @@
 <body style="background-color:rgba(0, 0, 0, 0.47);">
 
 <div id="Contenedor2">
-    <div align="center"><img style="text-align: center; top: 200px;
+    <div align="center">
+      <img style="text-align: center; top: 200px;
       right: 750px;
-      position: absolute;" name="cell" id="cell" width="30%" alt=""/></div>
-
-        <div id="infoCelda" style="display: none">
-          <p>
-          <b><u>Características de la celda</u></b>
-          </p>
-
-          <div id="v"></div>
-          <div id="nc"></div>
-          <div id="t"></div>
-          <div id="mo"></div>
-          <div id="mv"></div>
-          <div id="mxv"></div>
-        </div>
+      position: absolute;" name="cell" id="cell" width="30%" alt=""/>
+    </div>
+    </figure>
+    <div id="infoCelda" style="display: none">
+      <p>
+      <b><u>Características de la celda</u></b>
+      </p>
+      <div id="v"></div>
+      <div id="nc"></div>
+      <div id="t"></div>
+      <div id="mo"></div>
+      <div id="mv"></div>
+      <div id="mxv"></div>
+    </div>
 </div>
 
 <div id="logo2" class="logo2">
@@ -33,14 +34,16 @@
 </div>
 
 <div id="Contenedor1"> <!-- En las siguientes líneas creamos los selects para la elección del vehículo-->
-<form id="selectores" class="selectores">    
+<form id="selectores" class="selectores" action="">
     <select id="marcas" style="font-size: 15px;">
+      <option value="prueba"></option>
     </select> 
     <br>
-    <select id="models" style="font-size: 15px;">
+    <select id="models" disabled style="font-size: 15px;" >
+      <option value="prueba"></option>
     </select>
     <br>
-    <select id="fecha" style="font-size: 15px;">
+    <select id="fecha" disabled style="font-size: 15px;">
     </select>
       
     </form>
