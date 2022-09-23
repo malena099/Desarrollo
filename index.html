@@ -9,9 +9,9 @@
 
 <div id="Contenedor2">
     <div align="center">
-      <img style="text-align: center; top: 200px;
+      <img style="text-align: center; top: 400px;
       right: 750px;
-      position: absolute;" name="cell" id="cell" width="30%" alt=""/>
+      position: absolute;" name="cell" id="cell" width="20%" alt=""/>
     </div>
     </figure>
     <div id="infoCelda" style="display: none">
@@ -79,8 +79,12 @@
     alert("Has confirmado la elecci\u00F3n.");
 
  // Con el siguiente código enseñamos los datos de la celda
-    
-    document.getElementById("Contenedor1").style.display="none";
+    document.getElementById("botonConfirmacion").style.display="none";
+    document.getElementById("selectores").style.display="none";
+    document.getElementById("imagen").style.top="100px";
+    document.getElementById("imagen").style.width="20%";
+    document.getElementById("Contenedor1")
+    .style.width=300;
     document.getElementById("infoCelda").style.display="block";
 
     var cell=SelectCelda();
@@ -102,6 +106,8 @@
 
     var mav= "Voltaje Máximo: "+ getMaxVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     document.getElementById("mxv").innerHTML=mav;
+  
+    
   }
   //Detectamos si el usuario denegó el mensaje
   
