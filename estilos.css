@@ -119,6 +119,54 @@
 .botonConfirmacion button:hover{
         background: #b8eac389;
     }
+
+
+    #botonConfirmacion2 {
+        font-size: 17px;
+        top: 550px;
+        right: 200px;
+        position: absolute;
+        height: 100px;
+        width: 400px;
+        margin: 0 auto;
+        display: grid;
+        font-family: 
+        'Quicksand', sans-serif;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: #ffffffa2;
+        justify-content: space-around;
+        border-style: inset; border-width: 4px;
+        }
+    
+        
+    .botonConfirmacion2 button::-ms-expand {
+        display: none;
+    }
+        .botonConfirmacion2 button{
+        width: 100%;
+        cursor: pointer;
+          padding: 7px 10px;
+          height: 42px;
+          outline: 0; 
+          border: 0;
+        border-radius: 0;
+        background: #f0f0f0;
+        color: #7b7b7b;
+        font-size: 1em;
+        color: rgb(0, 0, 0);
+        font-family: 
+        'Quicksand', sans-serif;
+        border:2px solid rgba(0,0,0,0.2);
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.25s ease;
+        }
+    .botonConfirmacion2 button:hover{
+            background: #b8eac389;
+        }
+
     #logo2 {
     font-size: 17px;
     top: 750px;

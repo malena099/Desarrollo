@@ -63,6 +63,12 @@
       <button onclick="Negacionbutton()">No</button>
     </div>
 </div>
+<div id="botonConfirmacion2" class="botonConfirmacion2" style="display: none">
+  &iquest;Es esta la celda sujeto de estudio?
+  <br>
+  <button onclick="ConfirmDemo()" >S&iacute;</button>
+  <button onclick="Negacionbutton()">No</button>
+</div>
 <script src="funcionSelect.js"></script>
 <script src="my.js"></script><!-- En este archivo estan los datos de los coches-->
 
@@ -70,17 +76,13 @@
 <script type="text/javascript">
   function ConfirmDemo() {
   //Ingresamos un mensaje a mostrar
-  var mensaje = confirm( " \u00BFEs este su coche?");
-  
-  //Detectamos si el usuario acepto el mensaje
-  
-  if (mensaje) {
   
     alert("Has confirmado la elecci\u00F3n.");
 
  // Con el siguiente código enseñamos los datos de la celda
     document.getElementById("botonConfirmacion").style.display="none";
     document.getElementById("selectores").style.display="none";
+    document.getElementById("botonConfirmacion2").style.display="block";
     document.getElementById("imagen").style.top="100px";
     document.getElementById("imagen").style.width="20%";
     document.getElementById("Contenedor1")
@@ -106,17 +108,6 @@
 
     var mav= "Voltaje Máximo: "+ getMaxVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     document.getElementById("mxv").innerHTML=mav;
-  
-    
-  }
-  //Detectamos si el usuario denegó el mensaje
-  
-  else {
-  
-    alert("Por favor, vuelva a introducir el modelo.");
-    location.reload()
-
-  }
 
   }
 
