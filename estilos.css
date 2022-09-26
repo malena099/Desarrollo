@@ -169,7 +169,7 @@
 
     #logo2 {
     top: 88%;
-    position: absolute;
+    position: fixed;
     height: 12%;
     width: 100%;
     font-family: 
