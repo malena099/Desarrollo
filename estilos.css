@@ -53,12 +53,12 @@
 
 
 #selectores {
-    height: 300px;
-    width: 700px;
+    height: 7vh;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     justify-items: center;
+    
     }
     #cuerpo {
     height: 700px;
@@ -79,9 +79,9 @@
     font-size: 17px;
     top: 300px;
     right: 200px;
-    position: absolute;
-    height: 150px;
-    width: 400px;
+    position: fixed;
+    height: 15vh;
+    width: 30vw;
     margin: 0 auto;
     display: grid;
     font-family: 
@@ -95,7 +95,7 @@
 
     
 .botonConfirmacion button::-ms-expand {
-    display: none;
+    display: flex;
 }
     .botonConfirmacion button{
 	width: 100%;
@@ -142,7 +142,7 @@
     
         
     .botonConfirmacion2 button::-ms-expand {
-        display: none;
+        display: flex;
     }
         .botonConfirmacion2 button{
         width: 100%;
