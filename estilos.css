@@ -123,7 +123,7 @@
 
     #botonConfirmacion2 {
         font-size: 17px;
-        top: 550px;
+        top: 65%;
         right: 200px;
         position: absolute;
         height: 100px;
@@ -225,7 +225,7 @@
         }
     #infoCelda{
         font-size: 17px;
-        top: 300px;
+        top: 25%;
         right: 300px;
         position: absolute;
         height: 190px;

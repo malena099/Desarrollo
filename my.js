@@ -56,6 +56,11 @@ function loadCars(data) {
     loadSelect("marcas", marcas);
     marcasSelect.addEventListener("change", loadSelect2);
     modelsSelect.addEventListener("change", loadSelect3);
+/*     if(fechaSelect.addEventListener("change") || marcasSelect.addEventListener("change")|| modelsSelect.addEventListener("change")){
+        marcasSelect.value="Elige un coche";
+        modelsSelect.value="Elige el modelo";
+        fechaSelect.value="Elige Fecha";
+    } */
 }
 //colocamos los datos en un archivo json con su formato
 function getModelosForMarca(marca) {
