@@ -5,7 +5,11 @@
   <link href="estilos.css" rel="stylesheet" type="text/css"> <!--incluimos el archivo css (nos da formato a la página)-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body style="background-color:rgba(0, 0, 0, 0.47);width: 98%;height: 100%;">
+
+<body style="background-color:rgba(18, 177, 55, 0.582);width: 98%;height: 98%;">
+
+<input type="button" onclick="location.reload()" name="volver atrás" value="volver atrás">
+
 
 <div id="Contenedor2">
     <div align="center">
@@ -14,16 +18,15 @@
       position: absolute;" name="cell" id="cell" width="20%" alt=""/>
     </div>
     </figure>
-    <div id="infoCelda" style="display: none">
-      <p>
-      <b><u>Características de la celda</u></b>
-      </p>
-      <div id="v"></div>
-      <div id="nc"></div>
-      <div id="t"></div>
-      <div id="mo"></div>
-      <div id="mv"></div>
-      <div id="mxv"></div>
+    <p><div id="infoCelda" style="display: none">
+      <p><b><u>Características de la celda</u></b></p>
+      Tecnología: <span id="t"></span><br>
+      Voltaje (V): <span id="v"></span><br>
+      Voltaje Mínimo (V): <span id="mv"></span><br>
+      Voltaje Máximo (V): <span id="mxv"></span><br>
+      Carga Nominal (mAh): <span id="Carganom"></span><br>
+      Corriente de carga (mAh): <span id="CorCarga"></span><br>
+      Temperatura (&#176;C): <span id="Temp"></span>
     </div>
 </div>
 
@@ -55,14 +58,14 @@
       right: 750px;
       position: absolute;" name="imagen" id="imagen" width="30%" alt=""/></div> <!-- Ponemos el contenedor de la imagen del coche-->
     
-    <div id="botonConfirmacion" class="botonConfirmacion" style="display: none">
+    <div id="botonConfirmacion" class="botonConfirmacion" style="display: none"> <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
       &iquest;Es este el coche al que pertenece la bater&iacute;a?
       <br>
       <button onclick="ConfirmDemo()" >S&iacute;</button>
       <button onclick="Negacionbutton()">No</button>
     </div>
 </div>
-<div id="botonConfirmacion2" class="botonConfirmacion2" style="display: none">
+<div id="botonConfirmacion2" class="botonConfirmacion2" style="display: none"> <!-- El cuadrante donde el usuario concreta si quiere un análisis por celda o por módulo -->
   &iquest;Es esta la celda sujeto de estudio?
   <br>
   <button onclick="ConfirmDemo()" >S&iacute;</button>
@@ -89,25 +92,21 @@
     document.getElementById("infoCelda").style.display="block";
 
     var cell=SelectCelda();
-
-    var volt= "Voltaje: "+ getvoltajeForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
-    document.getElementById("v").innerHTML=volt;
-
-    var ncell= "Número de celdas: "+ getNumCellForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
-    document.getElementById("nc").innerHTML=ncell;
     
-    var Tech= "Tecnología: "+ getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
-    document.getElementById("t").innerHTML=Tech;
+    document.getElementById("t").innerHTML=getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("v").innerHTML=getvoltajeForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("mv").innerHTML=getMinVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
 
-    var mol= "Modulo: "+ getModuloForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
-    document.getElementById("mo").innerHTML=mol;
+    document.getElementById("mxv").innerHTML=getMaxVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("Carganom").innerHTML=getCargaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);   
 
-    var mvo= "Voltaje Mínimo: "+ getMinVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
-    document.getElementById("mv").innerHTML=mvo;
-
-    var mav= "Voltaje Máximo: "+ getMaxVoltForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
-    document.getElementById("mxv").innerHTML=mav;
-
+    document.getElementById("CorCarga").innerHTML=getCorrienteCargaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("Temp").innerHTML=getTemperaturaCargaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
   }
 
   function Negacionbutton(){

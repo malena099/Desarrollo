@@ -3,11 +3,9 @@ var modelsSelect = document.getElementById('models');
 var fechaSelect = document.getElementById('fecha');
 var imagen = document.getElementById('imagen');
 var cell = document.getElementById('cell');
-marcasSelect.addEventListener("change", loadSelect2);
-modelsSelect.addEventListener("change", loadSelect3);
-modelsSelect.addEventListener("change", mostrarImagen);
-fechaSelect.addEventListener("change", mostrarImagen);
+
 //con esto cargamos los selects y mostramos la imagen
+
 function loadSelect(id, values) {
     let selectElement = document.getElementById(id);
     selectElement.innerHTML = ''
@@ -42,10 +40,15 @@ function mostrarImagen() {
             $(document).ready(function(){
                 $("#botonConfirmacion").fadeIn(1000);
         });
-    }
+       }}
+       else{
+        ocultarImagen();
+       }
 }
+function ocultarImagen(){
+    imagen.src = getUrlImagenForMarcaAndModeloAndFecha("Elige un coche", "Elige el modelo", "Elige Fecha");
+    document.getElementById("botonConfirmacion").style.display="none";
 }
-
 //Con esto mostramos la imagen de la celda junto con el texto
 function SelectCelda(){
     

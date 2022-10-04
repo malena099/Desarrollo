@@ -20,7 +20,7 @@ init();
 
 let coches, marcas;
    
-const url = "https://script.google.com/macros/s/AKfycby9I2uk16F0g7XsJOlcxkC4xNoRSuNC6UKGoawn9AnDLmTAGdTCYy4dtghSPQiOqY-K/exec";
+const url = "https://script.google.com/macros/s/AKfycbx7M1v82qcpiOjxM703xvxLnWt35IMPKzhhrLfiDlcJyewTLrl-F9UphbO_3YRPnZRl/exec";
 
 
 fetch(url)
@@ -41,13 +41,14 @@ function loadCars(data) {
                 "modelo": data[row][1],
                 "fechas": data[row][2],
                 "urlImagen": data[row][3],
-                "urlCeldas": data[row][4],
-                "voltaje":data[row][5],
-                "NumCell":data[row][6],
-                "tecnologia":data[row][7],
-                "modulo":data[row][8],
-                "MinVolt":data[row][9],
-                "MaxVolt":data[row][10]
+                "tecnologia": data[row][4],
+                "urlCeldas":data[row][5],
+                "voltaje":data[row][6],
+                "MinVolt":data[row][7],
+                "MaxVolt":data[row][8],
+                "Carga":data[row][9],
+                "CorrienteCarga":data[row][10],
+                "Temperatura":data[row][11]
             }
         )
         marcas.add("Elige coche");
@@ -55,12 +56,11 @@ function loadCars(data) {
     }
     loadSelect("marcas", marcas);
     marcasSelect.addEventListener("change", loadSelect2);
+    marcasSelect.addEventListener("change", loadSelect3);
     modelsSelect.addEventListener("change", loadSelect3);
-/*     if(fechaSelect.addEventListener("change") || marcasSelect.addEventListener("change")|| modelsSelect.addEventListener("change")){
-        marcasSelect.value="Elige un coche";
-        modelsSelect.value="Elige el modelo";
-        fechaSelect.value="Elige Fecha";
-    } */
+    marcasSelect.addEventListener("change", ocultarImagen);
+    modelsSelect.addEventListener("change", ocultarImagen);
+    fechaSelect.addEventListener("change",mostrarImagen);
 }
 //colocamos los datos en un archivo json con su formato
 function getModelosForMarca(marca) {
@@ -185,4 +185,64 @@ function getMaxVoltForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     }
     
     return mxvolt;
+}
+
+function getCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let cargax = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            cargax.push(coche["Carga"])
+        }
+    }
+    
+    return cargax;
+}
+
+/* function getMinCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let cargamin = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            cargamin.push(coche["MinCarga"])
+        }
+    }
+    
+    return cargamin;
+}
+
+function getMaxCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let cargamax = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            cargamax.push(coche["MaxCarga"])
+        }
+    }
+    
+    return cargamax;
+}
+ */
+function getCorrienteCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let cargacor = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            cargacor.push(coche["CorrienteCarga"])
+        }
+    }
+    
+    return cargacor;
+}
+
+function getTemperaturaCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let temp = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            temp.push(coche["Temperatura"])
+        }
+    }
+    
+    return temp;
 }

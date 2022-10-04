@@ -168,10 +168,10 @@
         }
 
     #logo2 {
-    top: 88%;
+    top: 86%;
     position: fixed;
-    height: 15vh;
-    width: 100vw;
+    height: 16vh;
+    width: 120vw;
     font-family: 
 	'Quicksand', sans-serif;
     background-color: #ffffff;
@@ -228,7 +228,7 @@
         top: 25%;
         right: 300px;
         position: absolute;
-        height: 190px;
+        height: 200px;
         width: 15%;
         display: flex;
         font-family: 
@@ -239,4 +239,5 @@
         justify-content: space-around;
         border-style: inset; border-width: 4px;
         text-align: center;
+        white-space: break-word
     }
