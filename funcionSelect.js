@@ -56,3 +56,10 @@ function SelectCelda(){
         cell.src = getUrlCeldasForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
         }
 }
+
+function SelectModule(){
+    
+    if ("Elige un coche" !== marcasSelect.value && "Elige el modelo" !== modelsSelect.value) {
+        cell.src = geturlModuloForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+        }
+}

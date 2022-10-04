@@ -3,13 +3,37 @@
 <head>
   <title>Elecci&oacute;n del Coche</title>
   <link href="estilos.css" rel="stylesheet" type="text/css"> <!--incluimos el archivo css (nos da formato a la página)-->
+  <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body style="background-color:rgba(18, 177, 55, 0.582);width: 98%;height: 98%;">
+<body width: 98%;height: 98%;>
 
 <input type="button" onclick="location.reload()" name="volver atrás" value="volver atrás">
 
+<div class="btn-group" style="align-items: center; justify-content: center; left: 30vw; top:10px; " role="group" aria-label="Grupo de botones con menú desplegable anidado">
+  <div  class="btn-group" role="group">
+    <select id="marcas" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
+      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
+    </div>
+  </div>
+  <div class="btn-group" role="group">
+    <select id="models" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
+      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
+    </div>
+  </div>
+  <div class="btn-group" role="group">
+    <select id="fecha" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
+      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
+    </div>
+  </div>
+</div>
 
 <div id="Contenedor2">
     <div align="center">
@@ -30,6 +54,25 @@
     </div>
 </div>
 
+<div id="Contenedor3">
+  <div align="center">
+    <img style="text-align: center; top: 45%;
+    right: 750px;
+    position: absolute;" name="module" id="module" width="20%" alt=""/>
+  </div>
+  </figure>
+  <p><div id="infoCelda2" style="display: none">
+    <p><b><u>Características del modulo</u></b></p>
+    Tecnología: <span id="t2"></span><br>
+    Voltaje (V): <span id="v2"></span><br>
+    Voltaje Mínimo (V): <span id="mv2"></span><br>
+    Voltaje Máximo (V): <span id="mxv2"></span><br>
+    Carga Nominal (mAh): <span id="Carganom2"></span><br>
+    Corriente de carga (mAh): <span id="CorCarga2"></span><br>
+    Temperatura (&#176;C): <span id="Temp2"></span>
+  </div>
+</div>
+
 <div id="logo2" class="logo2">
     <img src="logo.png" width="13%" style="top: 15%;
     right: 50%;" />
@@ -37,17 +80,7 @@
 
 <div id="Contenedor1"> <!-- En las siguientes líneas creamos los selects para la elección del vehículo-->
 <form id="selectores" class="selectores" action="">
-    <select id="marcas" style="font-size: 15px;">
-      <option value="prueba"></option>
-    </select> 
-    <br>
-    <select id="models" disabled style="font-size: 15px;" >
-      <option value="prueba"></option>
-    </select>
-    <br>
-    <select id="fecha" disabled style="font-size: 15px;">
-    </select>
-      
+
     </form>
     <div class="preload">
       <div class="emoji"></div>
@@ -82,16 +115,16 @@
     alert("Has confirmado la elecci\u00F3n.");
 
  // Con el siguiente código enseñamos los datos de la celda
-    document.getElementById("botonConfirmacion").style.display="none";
-    document.getElementById("selectores").style.display="none";
-    document.getElementById("botonConfirmacion2").style.display="block";
+  document.getElementById("botonConfirmacion").style.display="none";
+  document.getElementById("selectores").style.display="none";
+  document.getElementById("botonConfirmacion2").style.display="block";
+  document.getElementById("Contenedor1")
+  .style.width=300;
+  if(getUrlCeldasForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value)!="-"){
+    var cell=SelectCelda();
     document.getElementById("imagen").style.top="10%";
     document.getElementById("imagen").style.width="20%";
-    document.getElementById("Contenedor1")
-    .style.width=300;
     document.getElementById("infoCelda").style.display="block";
-
-    var cell=SelectCelda();
     
     document.getElementById("t").innerHTML=getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     
@@ -106,7 +139,27 @@
     document.getElementById("CorCarga").innerHTML=getCorrienteCargaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     
     document.getElementById("Temp").innerHTML=getTemperaturaCargaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    }
+    else{
+    var module=SelectModule();
+    document.getElementById("imagen").style.top="10%";
+    document.getElementById("imagen").style.width="20%";
+    document.getElementById("infoCelda2").style.display="block";
     
+    document.getElementById("t2").innerHTML=getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("v2").innerHTML=getvoltaje2ForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("mv2").innerHTML=getMinVolt2ForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+
+    document.getElementById("mxv2").innerHTML=getMaxVolt2ForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("Carganom2").innerHTML=getCarga2ForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);   
+
+    document.getElementById("CorCarga2").innerHTML=getCorrienteCarga2ForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    
+    document.getElementById("Temp2").innerHTML=getTemperatura2ForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
+    }
   }
 
   function Negacionbutton(){

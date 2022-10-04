@@ -126,7 +126,7 @@
         top: 65%;
         right: 200px;
         position: absolute;
-        height: 100px;
+        height: 120px;
         width: 400px;
         margin: 0 auto;
         display: grid;
@@ -228,7 +228,25 @@
         top: 25%;
         right: 300px;
         position: absolute;
-        height: 200px;
+        height: 230px;
+        width: 15%;
+        display: flex;
+        font-family: 
+        'Quicksand', sans-serif;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffffa2;
+        justify-content: space-around;
+        border-style: inset; border-width: 4px;
+        text-align: center;
+        white-space: break-word
+    }
+    #infoCelda2{
+        font-size: 17px;
+        top: 25%;
+        right: 300px;
+        position: absolute;
+        height: 230px;
         width: 15%;
         display: flex;
         font-family: 

@@ -20,7 +20,7 @@ init();
 
 let coches, marcas;
    
-const url = "https://script.google.com/macros/s/AKfycbx7M1v82qcpiOjxM703xvxLnWt35IMPKzhhrLfiDlcJyewTLrl-F9UphbO_3YRPnZRl/exec";
+const url = "https://script.google.com/macros/s/AKfycbx1cXOYpyXB_gtjIoFIql7tOAwVvEr6NsbKLzUIh5v9WF9IWUPIijj51tTcv5rjcIVB/exec";
 
 
 fetch(url)
@@ -48,7 +48,14 @@ function loadCars(data) {
                 "MaxVolt":data[row][8],
                 "Carga":data[row][9],
                 "CorrienteCarga":data[row][10],
-                "Temperatura":data[row][11]
+                "Temperatura":data[row][11],
+                "urlModulo":data[row][12],
+                "voltaje2":data[row][13],
+                "MinVolt2":data[row][14],
+                "MaxVolt2":data[row][15],
+                "Carga2":data[row][16],
+                "CorrienteCarga2":data[row][17],
+                "Temperatura2":data[row][18]
             }
         )
         marcas.add("Elige coche");
@@ -127,7 +134,7 @@ function getvoltajeForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     return voltajenom;
 }
 
-function getNumCellForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+/* function getNumCellForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     let ncell = []
     
     for (let coche of coches) {
@@ -137,7 +144,7 @@ function getNumCellForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     }
     
     return ncell;
-}
+} */
 
 function getTecnologiaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     let tec = []
@@ -151,12 +158,12 @@ function getTecnologiaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     return tec;
 }
 
-function getModuloForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+function geturlModuloForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     let modulos = []
     
     for (let coche of coches) {
         if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
-            modulos.push(coche["modulo"])
+            modulos.push(coche["urlModulo"])
         }
     }
     
@@ -223,6 +230,8 @@ function getMaxCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     return cargamax;
 }
  */
+
+
 function getCorrienteCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     let cargacor = []
     
@@ -245,4 +254,76 @@ function getTemperaturaCargaForMarcaAndModeloAndFecha(marca, modelo, fechas) {
     }
     
     return temp;
+}
+
+function getvoltaje2ForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let voltajenom2 = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            voltajenom2.push(coche["voltaje2"])
+        }
+    }
+    
+    return voltajenom2;
+}
+
+function getMinVolt2ForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let mvolt2 = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            mvolt2.push(coche["MinVolt2"])
+        }
+    }
+    
+    return mvolt2;
+}
+
+function getMaxVolt2ForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let mxvolt2 = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            mxvolt2.push(coche["MaxVolt2"])
+        }
+    }
+    
+    return mxvolt2;
+}
+
+function getCarga2ForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let cargax2 = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            cargax2.push(coche["Carga2"])
+        }
+    }
+    
+    return cargax2;
+}
+
+function getCorrienteCarga2ForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let cargacor2 = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            cargacor2.push(coche["CorrienteCarga2"])
+        }
+    }
+    
+    return cargacor2;
+}
+
+function getTemperatura2ForMarcaAndModeloAndFecha(marca, modelo, fechas) {
+    let temp2 = []
+    
+    for (let coche of coches) {
+        if (coche["marca"] === marca && coche["modelo"] === modelo && coche["fechas"]=== fechas) {
+            temp2.push(coche["Temperatura2"])
+        }
+    }
+    
+    return temp2;
 }
