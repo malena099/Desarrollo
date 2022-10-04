@@ -12,22 +12,20 @@
 left: 50px;
 position: absolute;width: 2%;">
 
-<div id="selectores" class="btn-group" style="align-items: center; justify-content: center; left: 40vw; top:10px; " role="group" aria-label="Grupo de botones con menú desplegable anidado">
-  <div  class="btn-group" role="group">
+<div id="selectores" class="btn-group" style="width: 600px; left: 30vw; top:10px; " role="group" aria-label="Grupo de botones con menú desplegable anidado">
+  <div  class="btn-group" role="group" style="width: 200px;">
     <select id="marcas" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
-      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
-      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
     </div>
   </div>
-  <div class="btn-group" role="group">
+  <div class="btn-group" role="group" style="width: 200px;">
     <select id="models" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
       <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
       <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
     </div>
   </div>
-  <div class="btn-group" role="group">
+  <div class="btn-group" role="group" style="width: 200px;">
     <select id="fecha" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
       <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
@@ -110,7 +108,7 @@ position: absolute;width: 2%;">
     
     <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
 
-    <div id="botonConfirmacion2"  class="card border-primary mb-3" style="top: 65%;
+    <div id="botonConfirmacion2"  class="card border-primary mb-3" style="top: 85px;
     left: 65%; align-items: center; height: 240px;max-width: 22rem;display: none; text-align: center;">
       <div class="d-grid gap-2" style="width:300px; margin: 0 auto;">
         <br> &iquest;Es esta la celda a estudiar?
@@ -118,25 +116,16 @@ position: absolute;width: 2%;">
         <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
       </div>
     </div>
-    <div id="alerta" class="alert alert-dismissible alert-success" display="none">
-      <button onclick="cerrar()" type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¡Bien hecho! </font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ha leído con éxito </font></font><a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">este importante mensaje de alerta</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .
-    </font></font>
-  </div>
 <script src="funcionSelect.js"></script>
 <script src="my.js"></script> <!-- En este archivo estan los datos de los coches-->
 
 <!--Con las siguientes funciones configuramos los botones de confirmacion o negacion del coche-->
 
 <script type="text/javascript">
-
   function ConfirmDemo() {
   //Ingresamos un mensaje a mostrar
 
-    document.getElementById("alerta").style.display="block";
-    function cerrar(){
-      document.getElementById("alerta").style.display="none";
-    }
+    alert("Has confirmado su elección");
 
  // Con el siguiente código enseñamos los datos de la celda
   document.getElementById("botonConfirmacion").style.display="none";
