@@ -8,10 +8,11 @@
 </head>
 
 <body width: 98%;height: 98%;>
+<img src="arrow-left-square.svg" type="button" onclick="location.reload()" style="text-align: center; top: 3%;
+left: 50px;
+position: absolute;width: 2%;">
 
-<input type="button" onclick="location.reload()" name="volver atrás" value="volver atrás">
-
-<div class="btn-group" style="align-items: center; justify-content: center; left: 30vw; top:10px; " role="group" aria-label="Grupo de botones con menú desplegable anidado">
+<div id="selectores" class="btn-group" style="align-items: center; justify-content: center; left: 40vw; top:10px; " role="group" aria-label="Grupo de botones con menú desplegable anidado">
   <div  class="btn-group" role="group">
     <select id="marcas" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
@@ -42,16 +43,19 @@
       position: absolute;" name="cell" id="cell" width="20%" alt=""/>
     </div>
     </figure>
-    <p><div id="infoCelda" style="display: none">
-      <p><b><u>Características de la celda</u></b></p>
-      Tecnología: <span id="t"></span><br>
-      Voltaje (V): <span id="v"></span><br>
-      Voltaje Mínimo (V): <span id="mv"></span><br>
-      Voltaje Máximo (V): <span id="mxv"></span><br>
-      Carga Nominal (mAh): <span id="Carganom"></span><br>
-      Corriente de carga (mAh): <span id="CorCarga"></span><br>
-      Temperatura (&#176;C): <span id="Temp"></span>
-    </div>
+    <div id="infoCelda" class="card border-primary mb-3" style="max-width: 22rem;display: none; left: 65%; top: 40px;" >
+      <div class="card-body">
+        <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Características de la celda</font></font></h4>
+        <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          Tecnología: <span id="t"></span><br>
+          Voltaje: <span id="v"></span> V<br>
+          Voltaje Mínimo: <span id="mv"></span> V<br>
+          Voltaje Máximo: <span id="mxv"></span> V<br>
+          Carga Nominal: <span id="Carganom"></span> mAh<br>
+          Corriente de carga: <span id="CorCarga"></span> mAh<br>
+          Temperatura: <span id="Temp"></span>&#176;C</font></font></p>
+      </div>
+    </div> 
 </div>
 
 <div id="Contenedor3">
@@ -61,17 +65,20 @@
     position: absolute;" name="module" id="module" width="20%" alt=""/>
   </div>
   </figure>
-  <p><div id="infoCelda2" style="display: none">
-    <p><b><u>Características del modulo</u></b></p>
-    Tecnología: <span id="t2"></span><br>
-    Voltaje (V): <span id="v2"></span><br>
-    Voltaje Mínimo (V): <span id="mv2"></span><br>
-    Voltaje Máximo (V): <span id="mxv2"></span><br>
-    Carga Nominal (mAh): <span id="Carganom2"></span><br>
-    Corriente de carga (mAh): <span id="CorCarga2"></span><br>
-    Temperatura (&#176;C): <span id="Temp2"></span>
+
+
+  <div id="infoCelda2" class="card border-primary mb-3" style="max-width: 22rem;display: none; left: 65%; top: 40px;" >
+    <div class="card-body">
+      <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Características del modulo</font></font></h4>
+      <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tecnología: <span id="t2"></span><br>
+        Voltaje: <span id="v2"></span> V<br>
+        Voltaje Mínimo: <span id="mv2"></span> V<br>
+        Voltaje Máximo: <span id="mxv2"></span> V<br>
+        Carga Nominal: <span id="Carganom2"></span> mAh<br>
+        Corriente de carga: <span id="CorCarga2"></span> mAh<br>
+        Temperatura: <span id="Temp2"></span>&#176;C</font></font></p>
+    </div>
   </div>
-</div>
 
 <div id="logo2" class="logo2">
     <img src="logo.png" width="13%" style="top: 15%;
@@ -91,27 +98,37 @@
       right: 750px;
       position: absolute;" name="imagen" id="imagen" width="30%" alt=""/></div> <!-- Ponemos el contenedor de la imagen del coche-->
     
-    <div id="botonConfirmacion" class="botonConfirmacion" style="display: none"> <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
-      &iquest;Es este el coche al que pertenece la bater&iacute;a?
-      <br>
-      <button onclick="ConfirmDemo()" >S&iacute;</button>
-      <button onclick="Negacionbutton()">No</button>
+    <div id="botonConfirmacion"  class="card border-primary mb-3" style="top: 200px;
+    left: 65%; align-items: center;
+    height: 240px;max-width: 25rem;display: none"> <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
+      <div class="d-grid gap-2">
+        <br>&iquest;Es este el coche al que pertenece la bater&iacute;a?
+        <button onclick="ConfirmDemo()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S&iacute;</font></font></button>
+        <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
+      </div>
     </div>
-</div>
-<div id="botonConfirmacion2" class="botonConfirmacion2" style="display: none"> <!-- El cuadrante donde el usuario concreta si quiere un análisis por celda o por módulo -->
-  &iquest;Es esta la celda sujeto de estudio?
-  <br>
-  <button onclick="ConfirmDemo()" >S&iacute;</button>
-  <button onclick="Negacionbutton()">No</button>
-</div>
+    
+    <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
+
+    <div id="botonConfirmacion2"  class="card border-primary mb-3" style="top: 150px;
+    left: 65%; align-items: center; height: 240px;max-width: 22rem;display: none; text-align: center;">
+      <div class="d-grid gap-2" style="width:300px; margin: 0 auto;">
+        <br> &iquest;Es esta la celda a estudiar?
+        <button onclick="ConfirmDemo()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S&iacute;</font></font></button>
+        <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
+      </div>
+    </div>
+
 <script src="funcionSelect.js"></script>
-<script src="my.js"></script><!-- En este archivo estan los datos de los coches-->
+<script src="my.js"></script> <!-- En este archivo estan los datos de los coches-->
 
 <!--Con las siguientes funciones configuramos los botones de confirmacion o negacion del coche-->
+
 <script type="text/javascript">
+
   function ConfirmDemo() {
   //Ingresamos un mensaje a mostrar
-  
+
     alert("Has confirmado la elecci\u00F3n.");
 
  // Con el siguiente código enseñamos los datos de la celda
