@@ -4,44 +4,44 @@
   <title>Elecci&oacute;n del Coche</title>
   <link href="estilos.css" rel="stylesheet" type="text/css"> <!--incluimos el archivo css (nos da formato a la página)-->
   <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
-<body width: 98%;height: 98%;>
-<img src="arrow-left-square.svg" type="button" onclick="location.reload()" style="text-align: center; top: 3%;
-left: 50px;
-position: absolute;width: 2%;">
-
-<div id="selectores" class="btn-group" style="width: 600px; left: 30vw; top:10px; " role="group" aria-label="Grupo de botones con menú desplegable anidado">
+<body>
+<div class="container text-center">
+<div class="row"><br></div>
+  <div class="row">
+  <div class="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+  <div id="selectores" class="btn-group" style="width: 600px;" role="group" aria-label="Grupo de botones con menú desplegable anidado">
   <div  class="btn-group" role="group" style="width: 200px;">
     <select id="marcas" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
-    </div>
   </div>
   <div class="btn-group" role="group" style="width: 200px;">
     <select id="models" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
-      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
-      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
     </div>
-  </div>
+
   <div class="btn-group" role="group" style="width: 200px;">
     <select id="fecha" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></select>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
-      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
-      <a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">enlace desplegable</font></font></a>
     </div>
+  </div></font></font>
   </div>
 </div>
-
-<div id="Contenedor2">
-    <div align="center">
-      <img style="text-align: center; top: 45%;
-      right: 750px;
-      position: absolute;" name="cell" id="cell" width="20%" alt=""/>
+<div class="row">
+  <div class="col">
+  <div align="center"><img style="text-align: center; top: 25%;
+    position: absolute;" name="imagen" id="imagen" width="30%" alt=""/></div> <!-- Ponemos el contenedor de la imagen del coche-->
+  </div>
+  <div class="col">
+  <div id="botonConfirmacion"  class="card border-primary mb-3" style="top: 55%;
+  left: 50%; align-items: center;
+  height: 240px;max-width: 25rem;display: none"> <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
+    <div class="d-grid gap-2">
+      <br>&iquest;Es este el coche al que pertenece la bater&iacute;a?
+      <button onclick="ConfirmDemo()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S&iacute;</font></font></button>
+      <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
     </div>
-    </figure>
-    <div id="infoCelda" class="card border-primary mb-3" style="max-width: 22rem;display: none; left: 65%; top: 40px;" >
+  </div>
+    <div id="infoCelda" class="card border-primary mb-3" style="max-width: 22rem;display: none; top: 20%; left: 35%;" >
       <div class="card-body">
         <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Características de la celda</font></font></h4>
         <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -54,68 +54,59 @@ position: absolute;width: 2%;">
           Temperatura: <span id="Temp"></span>&#176;C</font></font></p>
       </div>
     </div> 
-</div>
-
-<div id="Contenedor3">
-  <div align="center">
-    <img style="text-align: center; top: 45%;
-    right: 750px;
-    position: absolute;" name="module" id="module" width="20%" alt=""/>
-  </div>
-  </figure>
-
-
-  <div id="infoCelda2" class="card border-primary mb-3" style="max-width: 22rem;display: none; left: 65%; top: 40px;" >
-    <div class="card-body">
-      <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Características del modulo</font></font></h4>
-      <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tecnología: <span id="t2"></span><br>
-        Voltaje: <span id="v2"></span> V<br>
-        Voltaje Mínimo: <span id="mv2"></span> V<br>
-        Voltaje Máximo: <span id="mxv2"></span> V<br>
-        Carga Nominal: <span id="Carganom2"></span> mAh<br>
-        Corriente de carga: <span id="CorCarga2"></span> mAh<br>
-        Temperatura: <span id="Temp2"></span>&#176;C</font></font></p>
+    <div id="infoCelda2" class="card border-primary mb-3" style="max-width: 22rem;display: none; left: 40%; top: 40px;" >
+      <div class="card-body">
+        <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Características del modulo</font></font></h4>
+        <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tecnología: <span id="t2"></span><br>
+          Voltaje: <span id="v2"></span> V<br>
+          Voltaje Mínimo: <span id="mv2"></span> V<br>
+          Voltaje Máximo: <span id="mxv2"></span> V<br>
+          Carga Nominal: <span id="Carganom2"></span> mAh<br>
+          Corriente de carga: <span id="CorCarga2"></span> mAh<br>
+          Temperatura: <span id="Temp2"></span>&#176;C</font></font></p>
+      </div>
     </div>
   </div>
-
-<div id="logo2" class="logo2">
-    <img src="logo.png" width="13%" style="top: 15%;
-    right: 50%;" />
+</div>
+<div class="row">
+    <div class="col" id="Contenedor2">
+          <div align="center">
+              <img style="text-align: center; top: 45%;
+                position: absolute;" name="cell" id="cell" width="20%" alt=""/>
+          </div>
+    </div>
+    <div id="Contenedor3" class="col">
+      <div align="center">
+        <img style="text-align: center; top: 45%;
+        position: absolute;" name="module" id="module" width="20%" alt=""/>
+      </div>
+  </div>
+    <div class="col">
+      <div id="botonConfirmacion2"  class="card border-primary mb-3" style="top: 75%; align-items: center; height: 240px;max-width: 22rem;display: none; text-align: center;">
+        <div class="d-grid gap-2" style="width:300px; margin: 0 auto;">
+          <br> &iquest;Es esta la celda a estudiar?
+          <button onclick="ConfirmDemo()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S&iacute;</font></font></button>
+          <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
+        </div>
+      </div>
+    </div>
 </div>
 
+</div>
 <div id="Contenedor1"> <!-- En las siguientes líneas creamos los selects para la elección del vehículo-->
-<form id="selectores" class="selectores" action="">
-
-    </form>
     <div class="preload">
       <div class="emoji"></div>
     </div>
-
-
-    <div align="center"><img style="text-align: center; top: 25%;
-      right: 750px;
-      position: absolute;" name="imagen" id="imagen" width="30%" alt=""/></div> <!-- Ponemos el contenedor de la imagen del coche-->
-    
-    <div id="botonConfirmacion"  class="card border-primary mb-3" style="top: 200px;
-    left: 65%; align-items: center;
-    height: 240px;max-width: 25rem;display: none"> <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
-      <div class="d-grid gap-2">
-        <br>&iquest;Es este el coche al que pertenece la bater&iacute;a?
-        <button onclick="ConfirmDemo()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S&iacute;</font></font></button>
-        <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
-      </div>
-    </div>
-    
     <!-- El cuadrante donde el usuario confirma que es el coche que tiene delante-->
-
-    <div id="botonConfirmacion2"  class="card border-primary mb-3" style="top: 85px;
-    left: 65%; align-items: center; height: 240px;max-width: 22rem;display: none; text-align: center;">
-      <div class="d-grid gap-2" style="width:300px; margin: 0 auto;">
-        <br> &iquest;Es esta la celda a estudiar?
-        <button onclick="ConfirmDemo()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S&iacute;</font></font></button>
-        <button onclick="Negacionbutton()" class="btn btn-lg btn-primary" type="button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">No</font></font></button>
-      </div>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-auto">
+  <div class="navigation">
+    <img src="logo.png"/>
+    <img src="arrow-left-square.svg" type="button" onclick="location.reload()" style="width: 3%; position: fixed; left: 93%; top: 93%"/>
+</div>
+</div>
+</div>
 <script src="funcionSelect.js"></script>
 <script src="my.js"></script> <!-- En este archivo estan los datos de los coches-->
 
@@ -135,10 +126,9 @@ position: absolute;width: 2%;">
   .style.width=300;
   if(getUrlCeldasForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value)!="-"){
     var cell=SelectCelda();
-    document.getElementById("imagen").style.top="10%";
     document.getElementById("imagen").style.width="20%";
     document.getElementById("infoCelda").style.display="block";
-    
+    document.getElementById("imagen").style.top="10%";
     document.getElementById("t").innerHTML=getTecnologiaForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
     
     document.getElementById("v").innerHTML=getvoltajeForMarcaAndModeloAndFecha(marcasSelect.value, modelsSelect.value,fechaSelect.value);
